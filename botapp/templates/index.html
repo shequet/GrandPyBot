@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Stéphane Héquet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <script src="{{ url_for('static', filename= 'js/bootstrap.min.js') }}" ></script>
+
+    <title>GrandPy Bot</title>
+</head>
+<body class="d-flex flex-column h-100">
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/"><img class="logo" src="{{ url_for('static', filename= 'img/logo.png') }}"> GrandPy, Le Bot qui a réponse à tout</a>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="flex-shrink-0">
+      <div class="container">
+          <h1>Vous avez une question à me poser ?</h1>
+          <div class="form-row">
+              <div class="col col-9">
+                      <input type="text" class="form-control" id="question" placeholder="Votre question ?">
+              </div>
+              <button type="submit" class="btn btn-primary col col-3">Chercher</button>
+          </div>
+
+            <div class="card response">
+              <div class="card-header">
+                Question
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Titre</h5>
+                <p class="card-text">Réponse</p>
+                <a href="#" class="btn btn-primary">En savoir plus</a>
+              </div>
+            </div>
+      </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        Stéphane Héquet, <a class="text-muted" href="https://github.com/shequet/GrandPyBot" target="_blank">GitHub</a> <a class="text-muted" href="https://www.linkedin.com/in/st%C3%A9phane-h%C3%A9quet-b03b1984/" target="_blank">Linkedin</a>
+      </div>
+    </footer>
+
+</body>
+</html>
