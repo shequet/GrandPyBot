@@ -1,3 +1,16 @@
+#map {
+  height: 500px;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.searchmatch{
+    background-color: #FFFF00;
+}
 
 .navbar-brand > .logo {
     height: 50px;
