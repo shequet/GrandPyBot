@@ -8,8 +8,8 @@ class Query:
 
     def __init__(self, google_api_place_key):
         """ Class initialiser """
-        #nltk.download('stopwords')
-        #nltk.download('punkt')
+        nltk.download('stopwords')
+        nltk.download('punkt')
 
         self.stop_words = stopwords.words('french')
         self.stop_words += ['connais', 'est-ce', 'grandpy', 'salut', '!']
