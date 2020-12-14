@@ -158,3 +158,32 @@ def mock_response_wikimedia_no_result(monkeypatch):
         return MockResponseWikimediaNoResult()
 
     monkeypatch.setattr(requests, "get", mock_get)
+
+
+class MockResponseWikimediaExtracts(object):
+    def __init__(self):
+        self.status_code = 200
+
+    @staticmethod
+    def json():
+        return {
+            "batchcomplete": "",
+            "query": {
+                "pages": {
+                    "4338589": {
+                        "pageid": 4338589,
+                        "ns": 0,
+                        "title": "OpenClassrooms",
+                        "extract": "OpenClassrooms est un site web de formation en ligne qui propose à ses membres des cours certifiants et des parcours débouchant sur des métiers en croissance. Ses contenus sont réalisés en interne, par des écoles, des universités, des entreprises partenaires comme Microsoft ou IBM, ou historiquement par des bénévoles. Jusqu'en 2018, n'importe quel membre du site pouvait être auteur, via un outil nommé « interface de rédaction » puis « Course Lab ». De nombreux cours sont issus de la communauté, mais ne sont plus mis en avant. Initialement orientée autour de la programmation informatique, la plate-forme couvre depuis 2013 des thématiques plus larges tels que le marketing, l'entrepreneuriat et les sciences."
+                    }
+                }
+            }
+        }
+
+
+@pytest.fixture
+def mock_response_wikimedia_extracts(monkeypatch):
+    def mock_get(*args, **kwargs):
+        return MockResponseWikimediaExtracts()
+
+    monkeypatch.setattr(requests, "get", mock_get)
