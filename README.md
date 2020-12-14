@@ -41,7 +41,11 @@ python run.py
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-## Lancer les tests
+### Lancer les tests
 ```shell
-pytest
+python -m pytest
 ```
+
+### Démo en ligne sur herokuapp
+
+https://evening-citadel-75590.herokuapp.com

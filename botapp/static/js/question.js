@@ -7,6 +7,9 @@ var contentResponse = $('#contentResponse');
 var divLoader = $('#loader');
 var divMap = $('#map');
 
+
+var avatarGrandPy = '<img class="avatarGrandPy" src="/static/img/logo.png">';
+
 var map;
 var marker;
 
@@ -48,6 +51,7 @@ function displayResponse(response) {
     var wikimedia = response.response.wikimedia;
 
     contentResponse.append('<p>Question : <strong>' + inputQuestion.val() + '</strong></p>');
+    contentResponse.append(avatarGrandPy + ' ' + response.response.beginning_phrase);
 
     if (google !== null) {
         contentResponse.append('<p>Adresse : <strong>' + google.formatted_address + '</strong></p>');
@@ -59,7 +63,7 @@ function displayResponse(response) {
     }
 
     if (wikimedia !== null) {
-        contentResponse.append('<p>' + wikimedia.snippet + '</p><hr>');
+        contentResponse.append('<p>' + wikimedia.description + '</p><hr>');
     } else {
         contentResponse.append('<p class="text-danger">Aucun résultat n\'a été trouvé pour cette recherche dans Wiki Media.</p><hr>');
     }

@@ -29,6 +29,10 @@ main > .container {
   padding-left: 15px;
 }
 
+.avatarGrandPy{
+    height: 32px;
+    width: 32px;
+}
 
 .response {
     margin-top: 50px;
