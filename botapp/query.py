@@ -6,7 +6,7 @@ from nltk.tokenize import word_tokenize
 
 class Query:
 
-    def __init__(self, google_api_place_key):
+    def __init__(self, google_api_place_key=''):
         """ Class initialiser """
         nltk.download('stopwords')
         nltk.download('punkt')
@@ -17,16 +17,19 @@ class Query:
         self.google_api_place_key = google_api_place_key
 
     def parser(self, search_input):
-        search_input = search_input.lower()
-        word_tokens = word_tokenize(search_input)
-        filtered_sentence = [w for w in word_tokens if not w in self.stop_words]
 
-        search_input_clean = ' '.join(filtered_sentence)
-        print(search_input_clean)
+        search_input_clean = self.clean_input_user(search_input)
+
         return {
             'google': self.search_in_google_place(search_input_clean),
             'wikimedia': self.search_in_wikimedia(search_input_clean),
         }
+
+    def clean_input_user(self, search_input):
+        word_tokens = word_tokenize(search_input.lower())
+        filtered_sentence = [w for w in word_tokens if not w in self.stop_words]
+
+        return ' '.join(filtered_sentence)
 
     def search_in_google_place(self, search):
         response = self.query_google_place(search)
