@@ -7,7 +7,6 @@ var contentResponse = $('#contentResponse');
 var divLoader = $('#loader');
 var divMap = $('#map');
 
-
 var avatarGrandPy = '<img class="avatarGrandPy" src="/static/img/logo.png">';
 
 var map;

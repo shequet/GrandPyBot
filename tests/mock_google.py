@@ -1,13 +1,22 @@
+#! /usr/bin/env python3
+# coding: utf-8
+""" Mock for google api """
 import pytest
 import requests
 
 
-class MockResponseGooglePositive(object):
+class MockResponseGooglePositive:
+    """ Class MockResponseGooglePositive """
+
     def __init__(self):
+        """ Class initializer """
+
         self.status_code = 200
 
     @staticmethod
     def json():
+        """ json response """
+
         return {
             "candidates": [
                 {
@@ -37,31 +46,49 @@ class MockResponseGooglePositive(object):
 
 @pytest.fixture
 def mock_response_google_positive(monkeypatch):
+    """ mock response for google positive response """
+
     def mock_get(*args, **kwargs):
+        """ get mock """
+
         return MockResponseGooglePositive()
 
     monkeypatch.setattr(requests, "get", mock_get)
 
 
-class MockResponseGoogle404(object):
+class MockResponseGoogle404:
+    """ Class MockResponseGoogle404 """
+
     def __init__(self):
+        """ Class initializer """
+
         self.status_code = 404
 
 
 @pytest.fixture
 def mock_response_google_404(monkeypatch):
+    """ mock response for google 404 code response """
+
     def mock_get(*args, **kwargs):
+        """ get mock"""
+
         return MockResponseGoogle404()
 
     monkeypatch.setattr(requests, "get", mock_get)
 
 
-class MockResponseGoogleNoResult(object):
+class MockResponseGoogleNoResult:
+    """ Class MockResponseGoogleNoResult """
+
     def __init__(self):
+        """ Class initializer """
+
         self.status_code = 200
 
     @staticmethod
     def json():
+        """ json response """
+
         return {
             "candidates": [],
             "status": "ZERO_RESULTS"
@@ -70,7 +97,10 @@ class MockResponseGoogleNoResult(object):
 
 @pytest.fixture
 def mock_response_google_no_result(monkeypatch):
+    """ mock response for google no response """
+
     def mock_get(*args, **kwargs):
+        """ get mock"""
         return MockResponseGoogleNoResult()
 
     monkeypatch.setattr(requests, "get", mock_get)

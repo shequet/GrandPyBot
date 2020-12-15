@@ -8,63 +8,73 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
 
-    <script src="{{ url_for('static', filename= 'js/external/jquery-3.5.1.min.js') }}" ></script>
-    <script src="{{ url_for('static', filename= 'js/external/bootstrap.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename= 'js/external/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/external/bootstrap.min.js') }}"></script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&callback=initMap&libraries=&v=weekly" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&callback=initMap&libraries=&v=weekly"
+            defer></script>
 
     <title>GrandPy Bot</title>
 </head>
 <body class="d-flex flex-column h-100">
 
-    <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/"><img class="logo" src="{{ url_for('static', filename= 'img/logo.png') }}"> GrandPy, Le Bot qui a réponse à tout</a>
-      </nav>
-    </header>
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/"><img class="logo" src="{{ url_for('static', filename= 'img/logo.png') }}">
+            GrandPy, Le Bot qui a réponse à tout</a>
+    </nav>
+</header>
 
-    <!-- Begin page content -->
-    <main role="main" class="flex-shrink-0">
-      <div class="container">
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+    <div class="container">
 
 
-            <div id="divResponse">
-                <div class="card response bg-transparent border-dark mb-3">
-                  <div class="card-header border-dark">GrandPy, Le Bot qui a réponse à tout</div>
-                  <div class="card-body">
+        <div id="divResponse">
+            <div class="card response bg-transparent border-dark mb-3">
+                <div class="card-header border-dark">GrandPy, Le Bot qui a réponse à tout</div>
+                <div class="card-body">
                     <p class="card-text" id="contentResponse"></p>
                     <div id="map"></div>
-                  </div>
-              </div>
+                </div>
             </div>
+        </div>
 
-          <h3>Vous avez une question à me poser ?</h3>
-          <div class="form-row">
-              <div class="col col-12">
+        <h3>Vous avez une question à me poser ?</h3>
+        <div class="form-row">
+            <div class="col col-12">
                 <input type="text" class="form-control" id="inputQuestion" placeholder="Votre question ?">
-              </div>
-          </div>
+            </div>
+        </div>
 
-          <div class="m-5 text-center" id="loader">
-              <div class="spinner-border text-success" role="status">
+        <div class="m-5 text-center" id="loader">
+            <div class="spinner-border text-success" role="status">
                 <span class="sr-only">Loading...</span>
-              </div>
-              GrandPy est en train de réfléchir...
-          </div>
+            </div>
+            GrandPy est en train de réfléchir...
+        </div>
 
-            <br>
-      </div>
-    </main>
+        <br>
+    </div>
+</main>
 
-    <footer class="footer mt-auto py-3">
-      <div class="container">
-        Stéphane Héquet, <a class="text-muted" href="https://github.com/shequet/GrandPyBot" target="_blank">GitHub</a> <a class="text-muted" href="https://www.linkedin.com/in/st%C3%A9phane-h%C3%A9quet-b03b1984/" target="_blank">Linkedin</a>
-      </div>
-    </footer>
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        Stéphane Héquet,
+        <a
+                class="text-muted"
+                href="https://github.com/shequet/GrandPyBot"
+                target="_blank">GitHub</a>
+        <a
+                class="text-muted"
+                href="https://www.linkedin.com/in/st%C3%A9phane-h%C3%A9quet-b03b1984/"
+                target="_blank">Linkedin</a>
+    </div>
+</footer>
 
-<script src="{{ url_for('static', filename= 'js/question.js') }}" ></script>
+<script src="{{ url_for('static', filename= 'js/question.js') }}"></script>
 
 </body>
 </html>
