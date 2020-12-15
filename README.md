@@ -49,3 +49,15 @@ python -m pytest
 ### Démo en ligne sur herokuapp
 
 https://evening-citadel-75590.herokuapp.com
+
+### Exemple recherche : Salut GrandPy ! Est-ce que tu connais l'adresse d'OpenClassrooms ?
+![Collecte de l'ensemble des objets](doc/search01.png)
+
+### Exemple recherche : C'est quoi l'adresse de carrefour à tours ?
+![Collecte de l'ensemble des objets](doc/search02.png)
+
+### Exemple recherche : J'aime bien manger des poires
+![Collecte de l'ensemble des objets](doc/search03.png)
+
+### Exemple recherche : De quelle couleur est le cheval blanc d'henri iv ?
+![Collecte de l'ensemble des objets](doc/search04.png)
